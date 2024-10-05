@@ -1,33 +1,86 @@
 .navbar {
-    background-color: #ffffff; /* Set navbar background color to white */
+    background: linear-gradient(90deg, #E0F7FA, #ffffff);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px 20px;
+    transition: background-color 0.3s ease;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
+
 .navbar-brand {
-    font-size: 24px; /* Increase font size */
-    color: #28a745;
+    font-size: 24px;
+    color: #ffffff;
+    font-weight: bold;
+    transition: color 0.3s ease;
 }
+
+.navbar-brand:hover {
+    color: #ffffff;
+}
+
 .navbar-nav .nav-link {
-    color: black !important; /* Change nav link color to black */
+    color: black !important;
+    padding: 10px 20px;
+    border-radius: 30px;
+    margin: 0 5px;
+    font-size: 16px;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
+
 .navbar-nav .nav-link.active {
-    color: #28a745 !important; /* Green color for active link */
-    background-color: #e7f0ff; /* Light blue background for active link */
-    border-radius: 5px; /* Rounded corners for active link */
+    color: #ffffff !important;
+    background-color: #ffffff;
+    border-radius: 30px;
+    transform: scale(1.1);
 }
+
 .navbar-nav .nav-link:hover {
-    color: #0056b3; /* Change link color on hover */
-    background-color: #e7f0ff; /* Light blue background on hover */
-    border-radius: 5px; /* Rounded corners on hover */
+    background-color: #ffffff;
+    color: #ffffff;
+    transform: scale(1.1);
 }
+
 .tech-titans-logo {
-    width: 50px; /* Adjust Tech Titans logo size */
+    width: 50px;
     height: auto;
-    margin-left: auto; /* Move to right */
-    margin-right: 20px; /* Space before the logo */
+    margin-left: auto;
+    margin-right: 20px;
+    transition: transform 0.3s ease;
 }
+
+.tech-titans-logo:hover {
+    transform: scale(1.1);
+}
+
 .sortquest-title {
-    color: #28a745; /* Green color for SortQuest */
-    margin-left: 20px; /* Space between Tech Titans logo and SortQuest title */
+    color: #000000;
+    margin-left: 20px;
+    font-weight: bold;
 }
+
+.sorting-visualizer-button,
+.search-visualizer-button {
+    background-color: transparent;
+    color: #0d120e;
+    border: 2px solid #030804;
+    padding: 10px 15px;
+    border-radius: 30px;
+    font-size: 16px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin-left: 10px;
+}
+
+.sorting-visualizer-button:hover,
+.search-visualizer-button:hover {
+    background-color: #ffffff;
+    color: #ffffff;
+}
+
+
+
+
+
 .footer {
     background: #E0F7FA;
     text-align: center;
@@ -160,7 +213,8 @@ body {
   
   
   .bar {
-     background: linear-gradient(#FF9933, #ffffff,#138808);
+     /* background: linear-gradient(#FF9933, #ffffff,#138808); */
+     background: linear-gradient(180deg, #FFB74D, #FFD54F, #388E3C);
      width: 28px;
      display: inline-block;
      margin: 0 0.1%;
