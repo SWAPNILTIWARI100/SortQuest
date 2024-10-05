@@ -84,26 +84,26 @@ function swap(i, j) {
 }
 
 
-// function disableSortingButtons() {
-//    document.getElementById("size").disabled = true;
-//    document.getElementById("speed").disabled = true;
-//    document.getElementById("stop1").disabled = true;
-//    document.getElementById("stop2").disabled = true;
-//    document.getElementById("stop3").disabled = true;
-//    document.getElementById("stop4").disabled = true;
-//    document.getElementById("stop5").disabled = true;
-//    document.getElementById("newArray").disabled = true;
-//  }
-//  function enableSortingButtons() {
-//    document.getElementById("size").disabled = false;
-//    document.getElementById("speed").disabled = false;
-//    document.getElementById("stop1").disabled = false;
-//    document.getElementById("stop2").disabled = false;
-//    document.getElementById("stop3").disabled = false;
-//    document.getElementById("stop4").disabled = false;
-//    document.getElementById("stop5").disabled = false;
-//    document.getElementById("newArray").disabled = false;
-//  }
+function disableSortingButtons() {
+   document.getElementById("size").disabled = true;
+   document.getElementById("speed").disabled = true;
+   document.getElementById("stop1").disabled = true;
+   document.getElementById("stop2").disabled = true;
+   document.getElementById("stop3").disabled = true;
+   document.getElementById("stop4").disabled = true;
+   document.getElementById("stop5").disabled = true;
+   document.getElementById("newArray").disabled = true;
+ }
+ function enableSortingButtons() {
+   document.getElementById("size").disabled = false;
+   document.getElementById("speed").disabled = false;
+   document.getElementById("stop1").disabled = false;
+   document.getElementById("stop2").disabled = false;
+   document.getElementById("stop3").disabled = false;
+   document.getElementById("stop4").disabled = false;
+   document.getElementById("stop5").disabled = false;
+   document.getElementById("newArray").disabled = false;
+ }
 
 
 // Delay function
@@ -115,32 +115,3 @@ async function timePLs() {
       }, delay)
    );
 }
-document.getElementById("sortingDesicription").innerHTML = `
-<div class="sortInfo">
-<article class="sortInfoArticle">
- <h2> Select Algorithm</h2>
- <p>
- You must select an algorithm before you can visualize it's execution on an array of numbers.
- </p>
- </article>
- <aside class="sortInfoAside">
-  <h3> Performance </h3>
-  <table>
-   <tbody>
-     <tr> 
-     <td>Worst Case Time Complexity</td>
-     </tr>
-     <tr> 
-     <td>Average Case Time Complexity </td>
-     </tr>
-     <tr> 
-     <td>Best Case Time Complexity</td>
-     </tr>
-     <tr> 
-     <td>Worst Case Space Complexity</td>
-     </tr>
-   <tbody>
-  </table>
- <aside>
-</div>
-`;

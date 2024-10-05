@@ -2,7 +2,8 @@
 
 async function insertionSort() {
   
-
+   const start= performance.now();
+   disableSortingButtons();
      let Bars = document.querySelectorAll(".bar");
   
      Bars[0].style.background = "linear-gradient(#087ee1, #05e8ba)"; // sorted
@@ -26,7 +27,12 @@ async function insertionSort() {
   
         Bars[i].style.background = "linear-gradient(#087ee1, #05e8ba)"; // sorted
      }
+     enableSortingButtons();
+    const end = performance.now();
+    const timeTaken = end - start; // Time in milliseconds
     
+    // Add data to graph
+    addDataToGraph(arraySize, timeTaken,"Insertion Sort");
   
   }
   

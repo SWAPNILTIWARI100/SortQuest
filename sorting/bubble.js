@@ -1,9 +1,11 @@
 // Bubble Sort
 
 async function bubbleSort() {
-    
+   disableSortingButtons();
+
+   const start = performance.now();
  
-     const start = performance.now();
+     
      
  
      let Bars = document.querySelectorAll(".bar");
@@ -31,7 +33,13 @@ async function bubbleSort() {
         Bars[Bars.length - i - 1].style.background = "linear-gradient(#087ee1, #05e8ba)"; // sorted
      }
      Bars[0].style.background = "linear-gradient(#087ee1, #05e8ba)"; // sorted
-     
+      
+    const end = performance.now();
+    const timeTaken = end - start; // Time in milliseconds
+    
+    // Add data to graph
+    addDataToGraph(arraySize, timeTaken,"Bubble Sort");
+    enableSortingButtons();
      
      
   }

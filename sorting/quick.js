@@ -2,7 +2,7 @@
 
 async function quickSort(low, high) {
   
-     //disableSortingButtons();
+     disableSortingButtons();
      const s = performance.now();
      
      if (low < high) {
@@ -14,12 +14,12 @@ async function quickSort(low, high) {
         let Bars = document.querySelectorAll(".bar");
         Bars[low].style.background = "linear-gradient(#087ee1, #05e8ba)"; // sorted
      }
-    //  enableSortingButtons();
-    //  const end = performance.now();
-    //  const timeTaken = end - s; // Time in milliseconds
+     enableSortingButtons();
+     const end = performance.now();
+     const timeTaken = end - s; // Time in milliseconds
      
-    //  // Add data to graph
-    //  addDataToGraph(arraySize, timeTaken,"Quick Sort");
+     // Add data to graph
+     addDataToGraph(arraySize, timeTaken,"Quick Sort");
   }
   
   

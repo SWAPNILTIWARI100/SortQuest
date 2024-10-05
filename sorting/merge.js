@@ -4,15 +4,15 @@ async function mergeSort(left, right) {
    
     const start= performance.now();
  
-    //disableSortingButtons();
+    disableSortingButtons();
    await mergeSorti(left,right);
      
-    //  enableSortingButtons();
-    //  const end = performance.now();
-    //  const timeTaken = end - start; // Time in milliseconds
+     enableSortingButtons();
+     const end = performance.now();
+     const timeTaken = end - start; // Time in milliseconds
      
-    //  // Add data to graph
-    //  addDataToGraph(arraySize, timeTaken,"Merge Sort");
+     // Add data to graph
+     addDataToGraph(arraySize, timeTaken,"Merge Sort");
   }
  
   async function mergeSorti(left, right) {

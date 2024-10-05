@@ -31,10 +31,10 @@ function newArray() {
      
       bars[i] = document.createElement("div");
       bars[i].classList.add("bar");
-      bars[i].style.height = (5 * val) + "px";
+      bars[i].style.height = (5 * valuesArray[i]) + "px";
       bars[i].style.width = width + "%";
       barContainer.appendChild(bars[i]);
-      bars[i].dataset.value=val;
+      bars[i].dataset.value=valuesArray[i];
     
     
     }

@@ -1,8 +1,8 @@
 // Selection sort 
 
 async function selectionSort() {
-  
-   
+   const start = performance.now();
+   disableSortingButtons();
      Bars = document.querySelectorAll(".bar");
      let minimum;
     
@@ -37,6 +37,11 @@ async function selectionSort() {
      }
   
      Bars[Bars.length - 1].style.background = "linear-gradient(#087ee1, #05e8ba)"; // sorted
+     enableSortingButtons();
+    const end = performance.now();
+    const timeTaken = end - start; // Time in milliseconds
     
+    // Add data to graph
+    addDataToGraph(arraySize, timeTaken,"Selection Sort");
   }
   
