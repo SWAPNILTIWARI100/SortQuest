@@ -1,0 +1,30 @@
+.navbar {
+    background-color: #ffffff; /* Set navbar background color to white */
+}
+.navbar-brand {
+    font-size: 24px; /* Increase font size */
+    color: #28a745;
+}
+.navbar-nav .nav-link {
+    color: black !important; /* Change nav link color to black */
+}
+.navbar-nav .nav-link.active {
+    color: #28a745 !important; /* Green color for active link */
+    background-color: #e7f0ff; /* Light blue background for active link */
+    border-radius: 5px; /* Rounded corners for active link */
+}
+.navbar-nav .nav-link:hover {
+    color: #0056b3; /* Change link color on hover */
+    background-color: #e7f0ff; /* Light blue background on hover */
+    border-radius: 5px; /* Rounded corners on hover */
+}
+.tech-titans-logo {
+    width: 50px; /* Adjust Tech Titans logo size */
+    height: auto;
+    margin-left: auto; /* Move to right */
+    margin-right: 20px; /* Space before the logo */
+}
+.sortquest-title {
+    color: #28a745; /* Green color for SortQuest */
+    margin-left: 20px; /* Space between Tech Titans logo and SortQuest title */
+}
