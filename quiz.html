@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Visualizer Quiz</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="index.css">
+    <style>
+        .correct {
+            color: green;
+        }
+        .wrong {
+            color: red;
+        }
+        #score {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body style="background-color: #E0F7FA;">
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand" style="color: red;" href="#">Want a Coffee?</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.html">Sorting Visualizer</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index2.html">Search Visualizer</a>
+                    </li>
+                </ul>
+                <img src="images/techlogo.jpg" alt="Tech Titans" class="tech-titans-logo">
+                <a class="navbar-brand sortquest-title" style="color: green;" href="#">SortQuest</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="main" style="background-color: #E0F7FA; padding: 20px;">
+        <h2 class="text-center">Want a Coffee? Give a Quiz </h2>
+        <form id="quizForm">
+            <div id="questionContainer" class="form-group">
+                <label id="questionText"></label>
+                <select class="form-control" id="answerSelect" required>
+                    <option value="" disabled selected>Select your answer</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+
+        <div id="result" class="mt-4" style="display:none;">
+            <h3>Your Results:</h3>
+            <p id="score"></p>
+          
+        </div>
+    </section>
+
+    <script>
+        const questions = [
+            // Original 10 Questions
+            {
+                question: "What is the time complexity of Bubble Sort?",
+                options: ["O(n^2)", "O(n)", "O(log n)"],
+                answer: "O(n^2)"
+            },
+            {
+                question: "What is the best case time complexity of Quick Sort?",
+                options: ["O(n^2)", "O(n log n)", "O(n)"],
+                answer: "O(n log n)"
+            },
+            {
+                question: "What is the time complexity of Linear Search?",
+                options: ["O(n)", "O(log n)", "O(n^2)"],
+                answer: "O(n)"
+            },
+            {
+                question: "What is the time complexity of Binary Search?",
+                options: ["O(n)", "O(log n)", "O(n log n)"],
+                answer: "O(log n)"
+            },
+            {
+                question: "What sorting algorithm is best for nearly sorted data?",
+                options: ["Bubble Sort", "Insertion Sort", "Selection Sort"],
+                answer: "Insertion Sort"
+            },
+            {
+                question: "What is the worst-case time complexity of Merge Sort?",
+                options: ["O(n)", "O(n log n)", "O(n^2)"],
+                answer: "O(n log n)"
+            },
+            {
+                question: "Which of the following sorting algorithms is not comparison-based?",
+                options: ["Bubble Sort", "Heap Sort", "Radix Sort"],
+                answer: "Radix Sort"
+            },
+            {
+                question: "In which data structure is Binary Search typically performed?",
+                options: ["Unsorted Array", "Sorted Array", "Linked List"],
+                answer: "Sorted Array"
+            },
+            {
+                question: "Which sorting algorithm is based on the divide-and-conquer paradigm?",
+                options: ["Selection Sort", "Quick Sort", "Insertion Sort"],
+                answer: "Quick Sort"
+            },
+            {
+                question: "What is the average case time complexity of Quick Sort?",
+                options: ["O(n)", "O(n^2)", "O(n log n)"],
+                answer: "O(n log n)"
+            },
+            // New 10 Questions
+            {
+                question: "For a small dataset, which algorithm is typically faster: Insertion Sort or Merge Sort?",
+                options: ["Insertion Sort", "Merge Sort", "Both are the same"],
+                answer: "Insertion Sort"
+            },
+            {
+                question: "For a large dataset, which algorithm is typically faster: Quick Sort or Bubble Sort?",
+                options: ["Quick Sort", "Bubble Sort", "Both are the same"],
+                answer: "Quick Sort"
+            },
+            {
+                question: "For a sorted array, what is the time complexity of Binary Search?",
+                options: ["O(n)", "O(log n)", "O(n log n)"],
+                answer: "O(log n)"
+            },
+            {
+                question: "Which algorithm is better for a dataset with many duplicate values: Quick Sort or Counting Sort?",
+                options: ["Quick Sort", "Counting Sort", "Both are the same"],
+                answer: "Counting Sort"
+            },
+            {
+                question: "Which algorithm typically requires the most swaps: Selection Sort or Insertion Sort?",
+                options: ["Selection Sort", "Insertion Sort", "Both are the same"],
+                answer: "Selection Sort"
+            },
+            {
+                question: "For a nearly sorted dataset, which algorithm performs better: Bubble Sort or Merge Sort?",
+                options: ["Bubble Sort", "Merge Sort", "Both are the same"],
+                answer: "Bubble Sort"
+            },
+            {
+                question: "Which searching algorithm has the best time complexity for large datasets: Linear Search or Binary Search?",
+                options: ["Linear Search", "Binary Search", "Both are the same"],
+                answer: "Binary Search"
+            },
+            {
+                question: "What is the average case time complexity of Linear Search?",
+                options: ["O(n)", "O(log n)", "O(n log n)"],
+                answer: "O(n)"
+            },
+            {
+                question: "Which sorting algorithm is stable: Merge Sort or Quick Sort?",
+                options: ["Merge Sort", "Quick Sort", "Both are the same"],
+                answer: "Merge Sort"
+            },
+            {
+                question: "Which algorithm performs better for very large datasets: Heap Sort or Selection Sort?",
+                options: ["Heap Sort", "Selection Sort", "Both are the same"],
+                answer: "Heap Sort"
+            }
+        ];
+
+        let currentQuestionIndex = 0;
+        let score = 0;
+        let selectedQuestions = [];
+
+        // Shuffle and select 10 random questions
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array.slice(0, 12); // Return first 10 elements
+        }
+
+        selectedQuestions = shuffleArray(questions);
+
+        // Display the first question
+        displayQuestion();
+
+        function displayQuestion() {
+            if (currentQuestionIndex < selectedQuestions.length) {
+                const question = selectedQuestions[currentQuestionIndex];
+                document.getElementById('questionText').innerText = question.question;
+                const answerSelect = document.getElementById('answerSelect');
+                answerSelect.innerHTML = '<option value="" disabled selected>Select your answer</option>';
+                question.options.forEach(option => {
+                    const optionElement = document.createElement('option');
+                    optionElement.value = option;
+                    optionElement.innerText = option;
+                    answerSelect.appendChild(optionElement);
+                });
+            } else {
+                showResult();
+            }
+        }
+
+        document.getElementById('quizForm').addEventListener('submit', function (e) {
+            e.preventDefault(); // Prevent the form from submitting
+            const selectedAnswer = document.getElementById('answerSelect').value;
+            const correctAnswer = selectedQuestions[currentQuestionIndex].answer;
+            if (selectedAnswer === correctAnswer) {
+                score++;
+            }
+            document.getElementById('score').innerText = `Warning: You got ${score} out of ${currentQuestionIndex+1} correct.`;
+            document.getElementById('result').style.display = 'block';
+            currentQuestionIndex++;
+            displayQuestion();
+        });
+
+        function showResult() {
+            document.getElementById('score').innerText = `Warning: You got ${score} out of ${selectedQuestions.length} correct.`;
+            document.getElementById('result').style.display = 'block';
+            if (score >= selectedQuestions.length-1) {
+                alert("Perfect score! Take a ScreenShot of this page and send a mail to us.");
+             
+            }
+            else{
+                alert("Better Luck Next Time..");
+                window.location.href = 'index.html'; 
+            }
+        }
+    </script>
+</body>
+</html>

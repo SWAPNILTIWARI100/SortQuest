@@ -1,4 +1,5 @@
 let barContainer = document.getElementById("bars");
+let gameModeOn = false;
 
 var delay = 300;
 let bars = [];
@@ -53,7 +54,7 @@ for (let i = 1; i < buttons.length; i++) {
             break;
          case "Insertion Sort": insertionSort();
             break;
-         case "Quick Sort": quickSort(0, document.querySelectorAll(".bar").length - 1);
+         case "Quick Sort": quickSorti(0, document.querySelectorAll(".bar").length - 1);
             break;
          case "Merge Sort": mergeSort(0, document.querySelectorAll(".bar").length - 1);
             break;
@@ -114,4 +115,85 @@ async function timePLs() {
          resolve();
       }, delay)
    );
+}
+
+
+// Add event listener to handle form submission
+document.getElementById('gameModeForm').addEventListener('submit', function(event) {
+   event.preventDefault(); 
+   
+   // Get the guesses from the user
+   const comparisonGuess = document.getElementById('comparisonGuess').value;
+   const swapGuess = document.getElementById('swapGuess').value;
+
+   // Validate that the user has entered valid numbers
+   if (comparisonGuess > -1 && swapGuess > -1) {
+       // Store the guesses temporarily for checking after the sorting is done
+       const resultMessage = document.getElementById('resultMessage');
+       resultMessage.textContent = `You selected ${comparisonGuess} comparisons and ${swapGuess} swaps.`;
+
+       // Display the warning message block
+       const warningMessage = document.getElementById('warningMessage');
+       warningMessage.style.display = 'block';
+
+       // Store the guesses temporarily for checking after the sorting is done
+       localStorage.setItem('comparisonGuess', comparisonGuess);
+       localStorage.setItem('swapGuess', swapGuess);
+
+       // Reset the form inputs to 0 after submit
+       document.getElementById('comparisonGuess').value = 0;
+       document.getElementById('swapGuess').value = 0;
+   
+
+       
+   } else {
+       // Show an error message if inputs are invalid
+       const resultMessage = document.getElementById('resultMessage');
+       resultMessage.textContent = `Please enter valid guesses for comparisons and swaps.`;
+       const warningMessage = document.getElementById('warningMessage');
+       warningMessage.style.display = 'block';
+   }
+});
+
+// Set initial values when the page loads
+window.onload = function() {
+   document.getElementById('comparisonGuess').value = 0;
+   document.getElementById('swapGuess').value = 0;
+   
+};
+
+
+
+function toggleGameMode() {
+    gameModeOn = !gameModeOn;
+    const gameModeBtn = document.getElementById('gameModeBtn');
+    const gameModeSection = document.getElementById('gameModeSection');
+
+    if (gameModeOn) {
+      
+        gameModeBtn.textContent = "Game Mode: On";
+        gameModeSection.style.display = 'block';
+    } else {
+      gameModeBtn.style.backgroundColor = 'red';
+        gameModeBtn.textContent = "Game Mode: Off";
+        gameModeSection.style.display = 'none';
+    }
+}
+
+function checkGameResult(comparisons, swaps) {
+
+   const comparisonGuess = localStorage.getItem('comparisonGuess');
+    const swapGuess = localStorage.getItem('swapGuess');
+
+    const resultMessage = document.getElementById('resultMessage');
+  
+   const warningMessage = document.getElementById('warningMessage');
+
+   if (comparisonGuess == comparisons && swapGuess == swaps) {
+       resultMessage.textContent = `You are correct! There were ${comparisons} comparisons and ${swaps} swaps.`;
+   } else {
+       resultMessage.textContent = `You are wrong! The correct answer is ${comparisons} comparisons and ${swaps} swaps.`;
+      
+   }
+   warningMessage.style.display = 'block'; // Display the message
 }
