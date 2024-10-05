@@ -81,7 +81,7 @@ document.getElementById("binarySearch").addEventListener("click", async function
         bar.style.background = "";
     }
    // disableButtons();
-    //await mergeSort(0, arraySize - 1); // Perform merge sort first
+    await mergeSort(0, arraySize - 1); // Perform merge sort first
     
     await getSelectedValueFromUser();
 
