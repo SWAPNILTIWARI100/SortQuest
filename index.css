@@ -28,3 +28,88 @@
     color: #28a745; /* Green color for SortQuest */
     margin-left: 20px; /* Space between Tech Titans logo and SortQuest title */
 }
+.footer {
+    background: #E0F7FA;
+    text-align: center;
+    padding: 1rem 0;
+    box-shadow: 0px -3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.footer .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    gap: 1.5rem;
+    padding: 0 2rem;
+}
+
+.footer .box-container .box {
+    background: #ffffff;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.footer .box-container .box:hover {
+    transform: translateY(-5px);
+}
+
+.footer .box-container .box h3 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.footer .box-container .box p {
+    font-size: 1.3rem;
+    color: var(--black);
+    line-height: 1.4;
+}
+
+.footer .box-container .box .share {
+    margin-top: 0.5rem;
+}
+
+.footer .box-container .box .share a {
+    height: 3rem;
+    width: 3rem;
+    line-height: 3rem;
+    border-radius: 50%;
+    font-size: 1.6rem;
+    border: .1rem solid var(--primary-color);
+    color: var(--primary-color);
+    margin-right: 0.4rem;
+    display: inline-block;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.footer .box-container .box .share a:hover {
+    background: var(--primary-color);
+    color: #ffffff;
+}
+
+.footer .box-container .box .link {
+    font-size: 1.4rem;
+    line-height: 1.2;
+    color: var(--black);
+    display: block;
+    margin: 0.3rem 0;
+    transition: color 0.3s;
+}
+
+.footer .box-container .box .link:hover {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+.footer .credit {
+    font-size: 1.4rem;
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    color: var(--black);
+    border-top: .1rem solid var(--primary-color);
+}
+
+.footer .credit span {
+    color: var(--primary-color);
+}
