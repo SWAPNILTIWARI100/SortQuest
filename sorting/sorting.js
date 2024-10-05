@@ -1,6 +1,6 @@
 let barContainer = document.getElementById("bars");
 
-var delay = 200;
+var delay = 300;
 let bars = [];
 let marginSize = 0.1;
 let arraySize = 40;
