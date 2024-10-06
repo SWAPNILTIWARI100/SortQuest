@@ -11,7 +11,7 @@ async function bubbleSort() {
    const warningMessage = document.getElementById('warningMessage');
    warningMessage.style.display = 'block';
   
-
+ 
    let comparisons = 0;
    let swaps = 0;
 

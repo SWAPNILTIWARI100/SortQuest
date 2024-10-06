@@ -20,7 +20,7 @@ async function insertionSort() {
 
    for (let i = 1; i < Bars.length; i++) {
        let j = i;
-      comparisons++;
+      comparisons++; 
        await timePLs();
 
        while (j > 0 && Number(Bars[j].style.height.slice(0, -2)) < Number(Bars[j - 1].style.height.slice(0, -2))) {

@@ -170,7 +170,7 @@ function toggleGameMode() {
     const gameModeSection = document.getElementById('gameModeSection');
 
     if (gameModeOn) {
-      
+       
         gameModeBtn.textContent = "Game Mode: On";
         gameModeSection.style.display = 'block';
     } else {

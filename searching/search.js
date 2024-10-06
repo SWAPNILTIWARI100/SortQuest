@@ -8,7 +8,7 @@ let width = 100 / arraySize - (2 * marginSize);
 let selectedValue = null; // Store the selected bar value
 let warningMessage = document.getElementById("warningMessage");
 
-document.getElementById("newArray").addEventListener("click", newArray);
+ 
 
 // Generating a new array
 function newArray() {

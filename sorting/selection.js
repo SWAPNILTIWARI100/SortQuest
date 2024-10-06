@@ -14,7 +14,7 @@ async function selectionSort() {
    let comparisons = 0;
    let swaps = 0;
 
-   const start = performance.now();
+   const start = performance.now(); 
 
    for (let i = 0; i < Bars.length - 1; i++) {
        let minimum = i;

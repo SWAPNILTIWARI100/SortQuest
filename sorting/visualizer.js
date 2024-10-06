@@ -79,7 +79,7 @@ let sortingChart = new Chart(ctx, {
                 bodyColor: '#000'
             }
         },
-        layout: {
+        layout: { 
             padding: {
                 top: 10,
                 left: 10,
