@@ -1,6 +1,6 @@
 # Educhacks1.0_TechTitans
 
-##About the Project: SortQuest
+#About the Project: SortQuest
 SortQuest is an innovative, game-based algorithm visualizer designed to help students better understand and interact with sorting and searching algorithms in Data Structures and Algorithms (DSA). Through interactive visualizations and gamification, SortQuest enhances the learning experience, making abstract algorithmic concepts more accessible and engaging.
 
 ##What Problem It Solves:
@@ -8,12 +8,13 @@ One of the significant challenges students face when learning DSA is the difficu
 
 Traditional teaching methods fail to provide real-time feedback on algorithm performance or opportunities for students to interactively engage with the algorithms themselves. Without such interaction, students may struggle to grasp essential concepts like time complexity, space efficiency, and algorithmic behavior under different conditions. This gap can lead to a lack of confidence when it comes to practical implementation and solving coding problems during technical interviews.
 
-##SortQuest directly addresses this problem by providing:
+#SortQuest directly addresses this problem by providing:
 
 Visualization: Step-by-step animations that show exactly how sorting and searching algorithms operate, allowing students to follow each action in real-time.
 Interactive Learning: Students can interact with the visualizer by adjusting array sizes, changing input configurations, and controlling the algorithm speed.
 Gamification: Incorporating game elements, such as prediction challenges and competitive gameplay, motivates students to actively participate and retain algorithmic concepts more effectively.
-Impact:
+
+#Impact:
 SortQuest transforms the traditional learning experience by fostering a more engaging and immersive environment where students can explore DSA concepts at their own pace. This tool helps students to:
 
 Visualize abstract concepts: By showing the step-by-step processes of different algorithms, students can develop a clearer understanding of how they function.
@@ -22,7 +23,7 @@ Stay motivated: The game-based challenges and interactive elements boost student
 Prepare for interviews: By helping students understand algorithmic performance metrics, such as time complexity and efficiency, SortQuest prepares them for technical interviews and coding challenges.
 The project significantly impacts students who are new to DSA concepts and those looking to deepen their knowledge by offering a platform that integrates learning with interaction, experimentation, and engagement.
 
-##Key Ideas:
+#Key Ideas:
 Interactive Visualization: Providing clear, step-by-step visualizations of sorting and searching algorithms to enhance comprehension.
 Gamified Learning: Integrating game mechanics to make learning algorithms more engaging and enjoyable for students, fostering active participation.
 Real-Time Feedback: Offering immediate feedback on algorithm performance metrics like time complexity and the number of comparisons or swaps performed.
