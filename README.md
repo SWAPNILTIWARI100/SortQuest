@@ -1,4 +1,4 @@
-# Educhacks1.0_TechTitans 
+# SortQuest - Sorting and Searching Algo visualizer 
 
 # Link -  https://swapniltiwari100.github.io/Educhacks1.0_TechTitans/
 
